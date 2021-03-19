@@ -42,3 +42,5 @@ hemisphere_images_urls = []
 cerebus_img = browser.links.find_by_text('Cerberus Hemisphere Enhanced')
 time.sleep(5)
 cerebus_img
+
+browser.quit()
