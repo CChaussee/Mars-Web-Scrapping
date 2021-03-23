@@ -9,7 +9,7 @@ db = client.mars_db
 collection = mars_facts
 
 @app.route('/scrape')
-def scrape:
+def scrape():
     pleasework = scrape_mars.scrape()
     db.mars_facts.insert_one(pleasework)
 

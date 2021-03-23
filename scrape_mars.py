@@ -36,11 +36,14 @@ mars_table = mars_table.set_index(["Information"])
 html_string = mars_table.to_html()
 html_string
 #Mars Hemispheres
+#Thank you Terra
 hemi_url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
 browser.visit(hemi_url)
 hemisphere_images_urls = []
-cerebus_img = browser.links.find_by_text('Cerberus Hemisphere Enhanced')
+imgs = browser.links.find_by_css('a.product-item')
 time.sleep(5)
-cerebus_img
-
+imgs[0]['href']
+imgs[1]['href']
+imgs[2]['href']
+imgs[3]['href']
 browser.quit()
