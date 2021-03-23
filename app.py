@@ -1,3 +1,4 @@
+#pretty sure this is all wrong but I do not know where it is going wrong
 from flask import Flask, render_template, jsonify, redirect
 import pymongo
 import scrape_mars
@@ -26,10 +27,6 @@ def featured_image(browser):
 
     full_image_button = browser.find_by_id("full_image")
     full_image_button.click()
-
-    browser.is_element_present_by_text("more info", wait_time=1)
-    more_info_element = browser.find_link_by_partial_text("more info")
-    more_info_element.click()
 
     html = browser.html
     image_soup = BeautifulSoup(html, "html.parser")
