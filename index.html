@@ -24,11 +24,51 @@
             <h3>Sorry :(</h3>
             </h2>
         </div>
-</div>  
+   <div class="container">
+    <div class="row" id="mars-featured-image">
+        <div class="col-lg-8 col-md-8 col-sm-12">
+        <h4>Featured Mars Image</h4>
+            <!-- If Images are False/None/Non-Existent, Then Default to Error Message -->
+            <img src="{{mars.featured_image | default('static/images/error.png', true) }}" class="img-responsive" style="max-width:100%; max-height: auto;" alt="Mars Featured Image"/>
+        </div>
+        
+     
+        <br>
+        <div class="row" id="mars-facts">
+            <div class="col-md-12">
+                <h4>Mars Facts</h4>
+                {{mars.facts}
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+                                    <div class="row" id="mars-hemispheres">
+                                        {% for hemisphere in mars.hemispheres %}
+                                        <div class="col-md-6">
+                                            <div class="card text-white bg-danger" style="margin: 30px;">
+                                           
+                                                <img class="card-img-top" src="{{hemisphere.img_url | default('static/images/error.png', true)}}" alt="..."/>
+                                                <div class="card-body">
+                                                    <p class="card-text">{{hemisphere.title}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                       
 
+                        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+                    </body>
+                    </html>
+                    
        
 
-</body>
+
 
 
 
